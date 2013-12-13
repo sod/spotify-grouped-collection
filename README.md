@@ -14,3 +14,7 @@ Group your playlist tracks as albums
 ## Resources
 
 API 1.0: https://developer.spotify.com/docs/apps/api/1.0/index.html
+
+## Screenshot
+
+![Screenshot](https://raw.github.com/sod/spotify-grouped-collection/master/doc/screenshot.png)
