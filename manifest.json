@@ -1,0 +1,30 @@
+{
+  "AppName": {
+    "en": "Grouped Collection"
+  },
+  "BundleIdentifier": "grouped-collection",
+  "AppDescription": {
+    "en": "A tutorial app for Spotify Apps API"
+  },
+  "AcceptedLinkTypes": [
+    "playlist"
+  ],
+  "BundleType": "Application",
+  "BundleVersion": "0.1",
+  "DefaultTabs": [
+    {
+      "arguments": "index",
+      "title": {
+        "en": "Album"
+      }
+    }
+  ],
+  "Dependencies": {
+    "api": "1.38.0",
+    "views": "1.18.1"
+  },
+  "SupportedLanguages": [
+    "en"
+  ],
+  "VendorIdentifier": "de.vonweiss"
+}
