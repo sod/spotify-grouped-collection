@@ -1,0 +1,83 @@
+#filter {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+#albums ul {
+  margin: 0;
+  padding: 0;
+}
+
+#albums li,
+#albums li .artist,
+#albums li .album,
+#albums li .image img,
+#albums li .playButton .center {
+  width: 130px;
+}
+
+#albums li .image,
+#albums li .playButton .center {
+  height: 130px;
+}
+
+#albums li {
+  position: relative;
+  display: inline-block;
+  list-style: none;
+  margin: 0 15px 30px 0;
+  vertical-align: top;
+  transition: opacity .3s ease-in-out;
+}
+
+#albums li .image {
+  padding-bottom: 5px;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#albums li .playButton {
+  position: absolute;
+  top: 0;
+}
+
+#albums li .playButton .center {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+#albums li .playButton .center button {
+  opacity: 0;
+}
+
+#albums li .playButton .center:hover button,
+#albums li .playButton button.sp-button-play-pause {
+  opacity: 1;
+  cursor: pointer;
+}
+
+#albums li .artist a {
+  color: #fff;
+}
+
+#albums li img {
+  width: 100%;
+  vertical-align: middle;
+}
+
+.hide,
+#albums li.hide {
+  width: 0;
+  margin-right: 0;
+  opacity: 0;
+}
+
+.playlistl {
+  transition: width .8s ease-in-out, height .8s ease-in-out, margin .8s ease-in-out, opacity .3s ease-in-out;
+}
+
+.playlist.hide {
+  height: 0;
+}

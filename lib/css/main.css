@@ -1,10 +1,10 @@
-html, body {
+html {
   background-color: #373737;
 }
 
 body {
   margin: 0;
-  padding: 1px 20px;
+  padding: 1px 15px;
   color: #999;
 }
 
@@ -18,93 +18,22 @@ h1, h2, h3, h4 {
 }
 
 h2 {
-  background-color: #313131;
-  box-shadow: 0 0 1px black;
-  margin: 0 -20px 20px -20px;
-  padding: 10px 20px;
+  border-bottom: 1px solid #222;
+  margin: 20px 0 15px 0;
+  padding: 10px 0;
   color: #fff;
 }
 
-#filter {
-  position: absolute;
-  right: 20px;
-  top: 20px;
-}
-
-#albums ul {
-  margin: 0;
-  padding: 0;
-}
-
-#albums li,
-#albums li .artist,
-#albums li .album,
-#albums li .image img,
-#albums li .playButton .center {
-  width: 150px;
-}
-
-#albums li .image,
-#albums li .playButton .center {
-  height: 150px;
-}
-
-#albums li {
-  position: relative;
-  display: inline-block;
-  list-style: none;
-  margin: 0 10px 30px 0;
-  vertical-align: top;
-  transition: width .8s ease-in-out, margin .8s ease-in-out, opacity .3s ease-in-out;
-}
-
-#albums li .image {
-  padding-bottom: 5px;
-  display: table-cell;
-  vertical-align: middle;
-}
-
-#albums li .playButton {
-  position: absolute;
-  top: 0;
-}
-
-#albums li .playButton .center {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
-}
-
-#albums li .playButton .center button {
-  opacity: 0;
-}
-
-#albums li .playButton .center:hover button,
-#albums li .playButton button.sp-button-play-pause {
+#app {
   opacity: 1;
-  cursor: pointer;
+  transition: opacity .4s;
 }
 
-#albums li .artist a {
-  color: #fff;
-}
-
-#albums li img {
-  width: 100%;
-  vertical-align: middle;
-}
-
-.hide,
-#albums li.hide {
-  width: 0;
-  margin-right: 0;
+#app.loading {
   opacity: 0;
 }
 
-.playlistl {
-  transition: width .8s ease-in-out, height .8s ease-in-out, margin .8s ease-in-out, opacity .3s ease-in-out;
-}
-
-.playlist.hide {
-  height: 0;
+.image::after{
+  /* Webkit Setting */
+  box-shadow:     inset 0 0 150px rgba(255,255,255,.75);
 }

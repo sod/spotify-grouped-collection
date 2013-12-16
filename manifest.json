@@ -1,10 +1,10 @@
 {
   "AppName": {
-    "en": "Grouped Collection"
+    "en": "Tidify"
   },
-  "BundleIdentifier": "grouped-collection",
+  "BundleIdentifier": "tidify",
   "AppDescription": {
-    "en": "A tutorial app for Spotify Apps API"
+    "en": "Tidy view of your Spotify library"
   },
   "AcceptedLinkTypes": [
     "playlist"

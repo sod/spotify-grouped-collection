@@ -9,7 +9,7 @@ Group your playlist tracks as albums
  3. Open the Spotify folder.
  4. Run `git clone https://github.com/sod/spotify-grouped-collection.git`.
  5. Download the [latest version of Spotify](http://spotify.com/download).
- 6. Open Spotify and type "spotify:app:grouped-collection:album" in the search bar (restart Spotify completely in case it doesn't find the App at first).
+ 6. Open Spotify and type `spotify:app:tidify` in the search bar (restart Spotify completely in case it doesn't find the App at first).
 
 ## Resources
 
