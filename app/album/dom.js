@@ -2,6 +2,16 @@ require([
   '$views/buttons'
 ], function(buttons) {
 
+  var clas = {
+    empty: {'class': ''},
+    inset: {'class': 'shadow-inset'},
+    playlist: {'class': 'playlist'},
+    image: {'class': 'image'},
+    playButton: {'class': 'playButton'},
+    artist: {'class': 'artist'},
+    album: {'class': 'album'}
+  };
+
   _.extend(exports, {
     /**
      * @param models.Artist[] artists
@@ -25,11 +35,12 @@ require([
      */
     album: function(album) {
       var playButton = buttons.PlayButton.forItem(album);
+      var imageHD = crel('img', {src: album.imageForSize(120), 'class': 'sp-image-style-rounded sp-image-style-embossed'});
       return [
-        crel('div', {'class': 'image'}, [crel('img', {src: album.imageForSize(300), class: 'sp-image-style-rounded sp-image-style-embossed'})]),
-        crel('div', {'class': 'playButton'}, crel('a', {'class': 'center', href: album.uri}, playButton.node)),
-        crel('div', {'class': 'artist'}, exports.artist(album.artists)),
-        crel('div', {'class': 'album'}, crel('a', {href: album.uri}, album.name))
+        crel('div', clas.image, crel('div', clas.inset, imageHD)),
+        crel('div', clas.playButton, crel('a', {'class': 'center', href: album.uri}, playButton.node)),
+        crel('div', clas.artist, exports.artist(album.artists)),
+        crel('div', clas.album, crel('a', {href: album.uri}, album.name))
       ];
     },
 
@@ -40,17 +51,17 @@ require([
      * @param {models.Playlist[]} playlists
      * @return DocumentFragment
      */
-    allByPlaylist: function(collections, playlists) {
+    playlist: function(collections, playlists) {
       var fragment = document.createDocumentFragment();
       _.each(collections, function(collection, index) {
         var playlist = playlists[index],
           dom = [];
         _.each(collection, function(album) {
-          var element = crel('li', {'class': ''}, exports.album(album));
+          var element = crel('li', clas.empty, exports.album(album));
           album.element = element;
           dom.push(element);
         });
-        fragment.appendChild(crel('div', {'class': 'playlist'}, [crel('h2', playlist.name), crel('ul', dom)]));
+        fragment.appendChild(crel('div', clas.playlist, [crel('h2', playlist.name), crel('ul', dom)]));
       });
       return fragment;
     }

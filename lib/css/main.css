@@ -1,11 +1,17 @@
 html {
+  height: 100%;
   background-color: #373737;
 }
 
 body {
+  height: 100%;
   margin: 0;
-  padding: 1px 15px;
+  padding: 0 15px;
   color: #999;
+}
+
+body.loading {
+  background: url(/lib/img/loadinfo.net.gif) no-repeat center;
 }
 
 a {
@@ -13,27 +19,48 @@ a {
 }
 
 h1, h2, h3, h4 {
-  color: #fff;
   margin-bottom: 20px;
+  color: #fff;
 }
 
 h2 {
-  border-bottom: 1px solid #222;
   margin: 20px 0 15px 0;
   padding: 10px 0;
   color: #fff;
+  border-bottom: 1px solid #222;
 }
 
 #app {
-  opacity: 1;
   transition: opacity .4s;
+  opacity: 1;
 }
 
-#app.loading {
+.loading #app {
   opacity: 0;
 }
 
-.image::after{
-  /* Webkit Setting */
-  box-shadow:     inset 0 0 150px rgba(255,255,255,.75);
+.shadow-inset {
+  position: relative;
+  display: block;
+}
+
+.shadow-inset img {
+  display: block;
+}
+
+.shadow-inset::before {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  content: '';
+  border-radius: 4px;
+  box-shadow: inset 0 0 1px 1px rgba(255, 255, 255, 0.15);
+}
+
+.viewport.viewport-hidden {
+  display: none;
 }
