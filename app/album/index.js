@@ -34,9 +34,8 @@ require([
       setTimeout(function() {
         domFilter.addEventListener('input', libSearchIndex.build(_.flatten(collections)).filter);
 
-
         // debug
-        require( [
+        require([
           '$api/models',
           '$views/buttons',
           '$views/list'
@@ -50,7 +49,7 @@ require([
             list: list
           };
           window.console && window.console.log('window.debug', window.debug);
-        } );
+        });
 
       });
     });

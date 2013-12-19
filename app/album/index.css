@@ -1,7 +1,7 @@
 #filter {
   position: absolute;
-  right: 20px;
   top: 20px;
+  right: 20px;
 }
 
 #albums ul {
@@ -29,14 +29,14 @@
 #albums li {
   position: relative;
   display: inline-block;
-  list-style: none;
   margin: 0 15px 30px 0;
+  list-style: none;
   vertical-align: top;
 }
 
 #albums li .image {
-  padding-bottom: 5px;
   display: table-cell;
+  padding-bottom: 5px;
   vertical-align: middle;
 }
 
@@ -46,9 +46,11 @@
 }
 
 #albums li .playButton .center {
+  position: relative;
+  z-index: 2;
   display: table-cell;
-  vertical-align: middle;
   text-align: center;
+  vertical-align: middle;
 }
 
 #albums li .playButton .center button {
@@ -57,8 +59,8 @@
 
 #albums li .playButton .center:hover button,
 #albums li .playButton button.sp-button-play-pause {
-  opacity: 1;
   cursor: pointer;
+  opacity: 1;
 }
 
 #albums li .artist a {

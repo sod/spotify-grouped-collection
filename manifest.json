@@ -4,7 +4,7 @@
   },
   "BundleIdentifier": "tidify",
   "AppDescription": {
-    "en": "Tidy view of your Spotify library"
+    "en": "Displays your playlists as collection of albums."
   },
   "AcceptedLinkTypes": [
     "playlist"
