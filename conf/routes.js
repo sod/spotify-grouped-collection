@@ -1,19 +1,16 @@
-/**
- * @param {Object} exports
- * @param {Array} exports.tabs - allowed tabs (the tabs you define in manifest.json)
- * @param {Array} exports.routes - allowed routes in scheme "<folder>/<tab>"
- * @param {Array} exports.fallback - fallback route if requested route is not available in "routes"
- */
-_.extend(exports, {
+/* jshint predef:exports */
 
-  tabs: [
-    'index'
-  ],
+// @param {Array} exports.tabs - allowed tabs (the tabs you define in manifest.json)
+exports.tabs = [
+  'album',
+  'artist'
+];
 
-  routes: [
-    'album/index'
-  ],
+// @param {Array} exports.routes - allowed routes in scheme "<folder>/<tab>"
+exports.routes = [
+  'album/index', // spotify:app:tidify:index:album
+  'artist/index' // spotify:app:tidify:index:artist
+];
 
-  fallback: 'album/index'
-
-});
+// @param {Array} exports.fallback - fallback route if requested route is not available in "routes"
+exports.fallback = exports.routes[0];

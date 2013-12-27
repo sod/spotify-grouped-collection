@@ -1,9 +1,3 @@
-#filter {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-}
-
 #albums ul {
   margin: 0;
   padding: 0;
@@ -70,8 +64,4 @@
 #albums li img {
   width: 100%;
   vertical-align: middle;
-}
-
-.hide {
-  display: none !important;
 }

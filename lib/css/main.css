@@ -31,7 +31,7 @@ h2 {
 }
 
 #app {
-  transition: opacity .4s;
+  transition: opacity .2s;
   opacity: 1;
 }
 
@@ -63,4 +63,14 @@ h2 {
 
 .viewport.viewport-hidden {
   display: none;
+}
+
+.hide {
+  display: none !important;
+}
+
+#filter {
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }

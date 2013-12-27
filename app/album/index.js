@@ -1,10 +1,10 @@
 require([
-  '/app/album/dom',
   '/lib/js/dom/app',
+  '/app/album/dom',
   '/lib/js/model/playlist',
   '/lib/js/model/album',
   '/lib/js/searchIndex'
-], function(dom, app, playlist, album, libSearchIndex) {
+], function(app, dom, playlist, album, libSearchIndex) {
 
   var domAlbums = document.getElementById('albums');
   var domFilter = document.getElementById('filter');
@@ -48,7 +48,7 @@ require([
             buttons: buttons,
             list: list
           };
-          window.console && window.console.log('window.debug', window.debug);
+          window.console && window.console.log('global window.debug:', window.debug);
         });
 
       });

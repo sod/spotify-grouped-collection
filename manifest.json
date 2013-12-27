@@ -13,9 +13,15 @@
   "BundleVersion": "0.1",
   "DefaultTabs": [
     {
-      "arguments": "index",
+      "arguments": "album",
       "title": {
-        "en": "Album"
+        "en": "Albums"
+      }
+    },
+    {
+      "arguments": "artist",
+      "title": {
+        "en": "Artists"
       }
     }
   ],
