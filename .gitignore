@@ -1,2 +1,9 @@
 .DS_Store
-.idea
+Thumbs.db
+
+.idea/*
+bower_components/*
+
+!*/
+!bower_components/crel/crel.js
+!bower_components/underscore/underscore-min.js

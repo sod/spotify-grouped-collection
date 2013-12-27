@@ -1,0 +1,8 @@
+{
+  "name": "spotify-grouped-collection",
+  "homepage": "https://github.com/sod/spotify-grouped-collection",
+  "dependencies": {
+    "underscore": "~1.5.2",
+    "crel": "*"
+  }
+}
