@@ -31,12 +31,11 @@ h2 {
 }
 
 #app {
-  transition: opacity .2s;
-  opacity: 1;
+  display: block;
 }
 
 .loading #app {
-  opacity: 0;
+  display: none;
 }
 
 .shadow-inset {
