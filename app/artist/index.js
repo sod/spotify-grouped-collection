@@ -28,7 +28,11 @@ require([
         }
         domArtists.appendChild(fragment);
         app.loading(false);
-        // debugger;
+        setTimeout(function() {
+          domFilter.addEventListener('input', libSearchIndex.build(albums, function() {
+            libSearchIndex.checkForEmptyContainer('.artist', 'ul > li[class=""]', 'artist');
+          }).filter);
+        });
       });
 
     });

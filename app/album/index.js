@@ -23,14 +23,9 @@ require([
       domAlbums.appendChild(fragment);
       app.loading(false);
       setTimeout(function() {
-        domFilter.addEventListener('input', libSearchIndex.build(_.flatten(collections)).filter);
-
-        // debug
-        require(['$api/models','$views/buttons','$views/list'], function(models, buttons, list) {
-          window.debug = { collections: collections,  playlist: playlists, album: collections[0][0], models: models, buttons: buttons, list: list };
-          window.console && window.console.log('global window.debug:', window.debug);
-        });
-
+        domFilter.addEventListener('input', libSearchIndex.build(_.flatten(collections), function() {
+          libSearchIndex.checkForEmptyContainer('.playlist', 'ul > li[class=""]', 'playlist');
+        }).filter);
       });
     });
     _.each(playlists, function(playlist) {
