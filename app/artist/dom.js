@@ -11,14 +11,26 @@ require([
 
   _.extend(exports, {
     /**
+     * @param {String} char
+     * @param {models.Artist[]} artists
+     */
+    char: function(char, artists) {
+      var items = [crel('h2', String(char).toUpperCase())];
+      var index = 0;
+      for(; index < artists.length; index += 1) {
+        items.push(exports.artist(artists[index]));
+      }
+      return crel('div', items);
+    },
+
+    /**
      * @param models.Artist artist
      * @returns {(HTMLElement|String)[]}
      */
     artist: function(artist) {
-      var name = crel('h2', crel('a', {href: artist.uri}, artist.name));
-      var image = crel('div', {'class': 'artist-image', 'style': 'background-image:url(' + artist.imageForSize(300) + ')'});
+      var name = crel('h3', crel('a', {href: artist.uri}, artist.name));
       var albums = crel('div', {'class': 'albums'}, crel('ul', _.map(artist.myAlbums || [], exports.album)));
-      var container = crel('div', {'class': 'artist'}, [name, image, albums]);
+      var container = crel('div', {'class': 'artist'}, [name, albums]);
 
       return container;
     },
@@ -36,7 +48,6 @@ require([
         crel('div', clas.album, crel('a', {href: album.uri}, album.name))
       ]);
     }
-
   });
 
 });

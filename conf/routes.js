@@ -2,13 +2,13 @@
 
 // @param {Array} exports.tabs - allowed tabs (the tabs you define in manifest.json)
 exports.tabs = [
-  'album',
+  'playlist',
   'artist'
 ];
 
 // @param {Array} exports.routes - allowed routes in scheme "<folder>/<tab>"
 exports.routes = [
-  'album/index', // spotify:app:tidify:index:album
+  'playlist/index', // spotify:app:tidify:index:playlist
   'artist/index' // spotify:app:tidify:index:artist
 ];
 

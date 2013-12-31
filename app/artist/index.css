@@ -5,7 +5,7 @@
   border-radius: 4px;
 }
 
-.artist h2 {
+.artist h3 {
   position: absolute;
   font-size: 1.2em;
   right: 0;
@@ -16,30 +16,17 @@
   text-shadow: 0 0 5px black;
 }
 
-.artist h2 a {
+.artist h3 a {
   color: white;
-}
-
-.artist-image {
-  -webkit-filter: blur(7px);
-  filter: blur(7px);
-  z-index: -1;
-  border-radius: 4px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background-size: 300px;
 }
 
 .albums {
   margin: 1px;
   border: 1px solid rgba(0,0,0,0.2);
-  background-color: rgba(55,55,55,0.85);
-  padding: 30px 12px 12px 12px;
-  box-shadow: 0 0 7px black;
+  background-color: #303030;
+  box-shadow: 0 0 6px rgba(0,0,0,.4);
   border-radius: 4px;
+  padding: 30px 12px 12px 12px;
 }
 
 .albums ul {

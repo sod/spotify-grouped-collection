@@ -1,12 +1,12 @@
 require([
   '/lib/js/dom/app',
-  '/app/album/dom',
+  '/app/playlist/dom',
   '/lib/js/model/playlist',
   '/lib/js/model/album',
   '/lib/js/searchIndex'
 ], function(app, dom, libPlaylist, libAlbum, libSearchIndex) {
 
-  var domAlbums = document.getElementById('albums');
+  var domPlaylists = document.getElementById('playlists');
   var domFilter = document.getElementById('filter');
 
   /**
@@ -19,8 +19,8 @@ require([
     var collections = [];
     var doneFn = _.after(playlists.length, function() {
       var fragment = dom.playlist(collections, playlists);
-      domAlbums.innerHTML = '';
-      domAlbums.appendChild(fragment);
+      domPlaylists.innerHTML = '';
+      domPlaylists.appendChild(fragment);
       app.loading(false);
       setTimeout(function() {
         domFilter.addEventListener('input', libSearchIndex.build(_.flatten(collections), function() {

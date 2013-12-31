@@ -13,9 +13,9 @@
   "BundleVersion": "0.1",
   "DefaultTabs": [
     {
-      "arguments": "album",
+      "arguments": "playlist",
       "title": {
-        "en": "Albums"
+        "en": "Playlists"
       }
     },
     {

@@ -11,6 +11,28 @@ require([
   var domFilter = document.getElementById('filter');
 
   /**
+   * @param {models.Artist} artist
+   * @returns {string}
+   */
+  function getArtistCharacter(artist) {
+    return String(artist.name || '-')[0].toLowerCase();
+  }
+
+  /**
+   *
+   * @param {models.Artist[]} artists
+   * @return {models.Artist[][]}
+   */
+  function groupArtists(artists) {
+    var grouped = _.groupBy(artists, getArtistCharacter);
+    var array = _.toArray(grouped);
+    array.sort(function(left, right) {
+      return (left[0]||0).name > (right[0]||0).name ? 1 : -1;
+    });
+    return array;
+  }
+
+  /**
    * application controller
    * fetch playlist and render them, attach event listeners
    *
@@ -22,9 +44,12 @@ require([
       var albums = _.flatten(collections);
       libArtist.fromAlbums(albums, function(artists) {
         var fragment = document.createDocumentFragment();
+        var grouped = groupArtists(artists);
+        var char;
         var index = 0;
-        for(; index < artists.length; index += 1) {
-          fragment.appendChild(dom.artist(artists[index]));
+        for(; index < grouped.length; index += 1) {
+          char = getArtistCharacter(grouped[index][0]);
+          fragment.appendChild(dom.char(char, grouped[index]));
         }
         domArtists.appendChild(fragment);
         app.loading(false);
