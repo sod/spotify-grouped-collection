@@ -11,7 +11,7 @@ Group your playlist tracks as albums
  5. Download the [latest version of Spotify](http://spotify.com/download).
  6. Open Spotify and type `spotify:app:tidify` in the search bar (restart Spotify completely in case it doesn't find the App at first).
 
-Sadly you have to repeat step 6 every time you restart Spotify as this app is not listed in the App Finder.
+Sadly you have to repeat step 6 every time you restart Spotify as this app is not listed on the App Finder.
 
 ## Resources
 
@@ -19,4 +19,10 @@ API 1.0: https://developer.spotify.com/docs/apps/api/1.0/index.html
 
 ## Screenshot
 
-![Screenshot](doc/screenshot.png)
+### Playlists tab (group albums by playlist)
+
+![Screenshot](doc/screenshot-playlists.png)
+
+### Artists tab (group albums by artist)
+
+![Screenshot](doc/screenshot-artists.png)
