@@ -8,16 +8,16 @@ li .artist,
 li .album,
 li .image img,
 li .playButton .center {
-  width: 120px;
+  width: 128px;
 }
 
 li {
-  height: 180px;
+  min-height: 150px;
 }
 
 li .image,
 li .playButton .center {
-  height: 120px;
+  height: 128px;
 }
 
 li {
@@ -48,12 +48,12 @@ li .playButton .center {
 }
 
 li .playButton .center button {
+  transition: opacity linear .1s;
   opacity: 0;
 }
 
 li .playButton .center:hover button,
 li .playButton button.sp-button-play-pause {
-  cursor: pointer;
   opacity: 1;
 }
 

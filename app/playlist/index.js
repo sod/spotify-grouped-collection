@@ -3,15 +3,18 @@ require([
   '/app/playlist/dom',
   '/lib/js/model/playlist',
   '/lib/js/model/album',
-  '/lib/js/searchIndex'
-], function(app, dom, libPlaylist, libAlbum, libSearchIndex) {
+  '/lib/js/searchIndex',
+  'strings/main.lang'
+], function(app, dom, libPlaylist, libAlbum, libSearchIndex, translate) {
 
   var domPlaylists = document.getElementById('playlists');
   var domFilter = document.getElementById('filter');
+  var domFilterError = document.getElementById('filter-error');
 
   /**
    * application controller
-   * fetch playlist and render them, attach event listeners
+   * - fetch playlists and render them
+   * - attach filter event listener
    *
    * @type {Array}
    */
@@ -24,10 +27,14 @@ require([
       app.loading(false);
       setTimeout(function() {
         domFilter.addEventListener('input', libSearchIndex.build(_.flatten(collections), function() {
-          libSearchIndex.checkForEmptyContainer('.playlist', 'ul > li[class=""]', 'playlist');
+          var visibleElements = libSearchIndex.checkForEmptyContainer('.playlist', 'ul > li[class=""]', 'playlist');
+          domFilterError.innerHTML = visibleElements.length ? '' : translate.get('error_no_results');
         }).filter);
       });
     });
+    if(!playlists.length) {
+      return app.errorNoTracks();
+    }
     _.each(playlists, function(playlist) {
       collections.push(libAlbum.fromPlaylist(playlist, doneFn));
     });

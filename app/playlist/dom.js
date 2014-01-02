@@ -58,7 +58,7 @@ require([
           dom = [];
         _.each(collection, function(album) {
           var element = crel('li', clas.empty, exports.album(album));
-          album.element = element;
+          album.elements.push(element);
           dom.push(element);
         });
         fragment.appendChild(crel('div', clas.playlist, [crel('h2', playlist.name), crel('ul', dom)]));

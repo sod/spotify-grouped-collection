@@ -1,0 +1,4 @@
+{
+  "error_no_albums": "No music albums found. Please create at least one playlist. Playlists from users you do follow are not being taken as source.",
+  "error_no_results": "This filter does not match any artist or album."
+}

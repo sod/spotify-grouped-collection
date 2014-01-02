@@ -19,7 +19,7 @@ a {
 }
 
 h1, h2, h3, h4 {
-  margin-bottom: 20px;
+  margin: 10px 0;
   color: #fff;
 }
 
@@ -28,14 +28,6 @@ h2 {
   padding: 10px 0;
   color: #fff;
   border-bottom: 1px solid #222;
-}
-
-#app {
-  display: block;
-}
-
-.loading #app {
-  display: none;
 }
 
 .shadow-inset {

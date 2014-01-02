@@ -1,16 +1,25 @@
 {
   "AppName": {
-    "en": "Tidify"
+    "de": "Meine Alben",
+    "en": "My Albums",
+    "fr": "Mes Albums",
+    "es": "Mis álbumes",
+    "nl": "Mijn Albums"
   },
-  "BundleIdentifier": "tidify",
+  "BundleIdentifier": "myalbums",
   "AppDescription": {
-    "en": "Displays your playlists as collection of albums."
+    "de": "Ein Übersicht aller deiner Alben und Artists.",
+    "en": "See all your albums and artists you have in your playlists.",
+    "fr": "Voir tous vos albums que vous avez dans vos playlists.",
+    "es": "Ver álbumes que tienes en tus listas de reproducción.",
+    "nl": "Bekijk al albums en artiesten die u in uw afspeellijsten."
   },
   "AcceptedLinkTypes": [
     "playlist"
   ],
   "BundleType": "Application",
-  "BundleVersion": "0.1",
+  "BundleVersion": "1.0.0",
+  "RequiredInterface": 1,
   "DefaultTabs": [
     {
       "arguments": "playlist",
@@ -30,7 +39,11 @@
     "views": "1.18.1"
   },
   "SupportedLanguages": [
-    "en"
+    "de",
+    "en",
+    "fr",
+    "es",
+    "nl"
   ],
   "VendorIdentifier": "de.vonweiss"
 }

@@ -6,7 +6,7 @@ exports.tabs = [
   'artist'
 ];
 
-// @param {Array} exports.routes - allowed routes in scheme "<folder>/<tab>"
+// @param {Array} exports.routes - allowed routes in scheme "<folder>/<file>"
 exports.routes = [
   'playlist/index', // spotify:app:tidify:index:playlist
   'artist/index' // spotify:app:tidify:index:artist
