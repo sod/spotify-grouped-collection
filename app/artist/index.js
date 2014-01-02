@@ -9,13 +9,15 @@ require([
 
   var domArtists = document.getElementById('artists');
   var domFilter = document.getElementById('filter');
+  var isChar = /[a-z]/;
 
   /**
    * @param {models.Artist} artist
-   * @returns {string}
+   * @returns {string} character one of a-z or #
    */
   function getArtistCharacter(artist) {
-    return String(artist.name || '-')[0].toLowerCase();
+    var char = String(artist.name || '-')[0].toLowerCase();
+    return isChar.test(char) ? char : '#';
   }
 
   /**
@@ -32,9 +34,41 @@ require([
     return array;
   }
 
+  function getCharacterFromElement(element) {
+    return element.id;
+  }
+
+  /**
+   * @param {Array} visibleCharacters
+   */
+  var updateNavigation = (function() {
+    var visible = [];
+    var on = 'on';
+    var off = 'off';
+    var getCharacterFromHref = /#(.*)$/;
+    var characters = _.map(document.querySelectorAll('#navigation a'), function(element) {
+      return {
+        char: (getCharacterFromHref.exec(element.href)||' #')[1],
+        element: element
+      };
+    });
+    function update() {
+      window.console && window.console.log(visible, characters);
+      var index = 0;
+      for(; index < characters.length; index += 1) {
+        characters[index].element.className = visible.indexOf(characters[index].char) !== -1 ? on : off;
+      }
+    }
+
+    return function(visibleCharacters) {
+      visible = visibleCharacters || [];
+      requestAnimationFrame(update);
+    };
+  }());
+
   /**
    * application controller
-   * fetch playlist and render them, attach event listeners
+   * fetch artists from user playlists and render them, attach event listeners
    *
    * @type {Array}
    */
@@ -43,23 +77,25 @@ require([
     var doneFn = _.after(playlists.length, function() {
       var albums = _.flatten(collections);
       libArtist.fromAlbums(albums, function(artists) {
-        var fragment = document.createDocumentFragment();
-        var grouped = groupArtists(artists);
         var char;
         var index = 0;
+        var fragment = document.createDocumentFragment();
+        var grouped = groupArtists(artists);
         for(; index < grouped.length; index += 1) {
           char = getArtistCharacter(grouped[index][0]);
           fragment.appendChild(dom.char(char, grouped[index]));
         }
         domArtists.appendChild(fragment);
+        updateNavigation(_.map(libSearchIndex.checkForEmptyContainer('#artists > div', 'div[class="artist"]'), getCharacterFromElement));
         app.loading(false);
         setTimeout(function() {
           domFilter.addEventListener('input', libSearchIndex.build(albums, function() {
             libSearchIndex.checkForEmptyContainer('.artist', 'ul > li[class=""]', 'artist');
+            var visibleElements = libSearchIndex.checkForEmptyContainer('#artists > div', 'div[class="artist "]');
+            updateNavigation(_.map(visibleElements, getCharacterFromElement));
           }).filter);
         });
       });
-
     });
     _.each(playlists, function(playlist) {
       collections.push(libAlbum.fromPlaylist(playlist, doneFn));

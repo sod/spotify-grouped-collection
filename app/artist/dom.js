@@ -15,12 +15,15 @@ require([
      * @param {models.Artist[]} artists
      */
     char: function(char, artists) {
-      var items = [crel('h2', String(char).toUpperCase())];
+      char = String(char).toUpperCase();
+      var headline = crel('h2', crel('a', {href:'#headline'}, char));
+      var items = [];
       var index = 0;
       for(; index < artists.length; index += 1) {
         items.push(exports.artist(artists[index]));
       }
-      return crel('div', items);
+      items = crel('div', {'class': 'char'}, items);
+      return crel('div', {id: char}, [headline, items]);
     },
 
     /**
