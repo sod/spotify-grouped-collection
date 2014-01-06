@@ -101,6 +101,9 @@ require([
             domFilterError.innerHTML = visibleElements.length ? '' : translate.get('error_no_results');
           }).filter);
         });
+        setTimeout(function() {
+          _.each(document.querySelectorAll('img[data-src-hd]'), function(img) { img.src = img.dataset.srcHd });
+        }, 1000);
       });
     });
     if(!playlists.length) {

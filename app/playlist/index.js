@@ -21,6 +21,7 @@ require([
   libPlaylist.fromCurrentUser(function(playlists) {
     var collections = [];
     var doneFn = _.after(playlists.length, function() {
+      window.console && window.console.log('done');
       var fragment = dom.playlist(collections, playlists);
       domPlaylists.innerHTML = '';
       domPlaylists.appendChild(fragment);
@@ -31,6 +32,9 @@ require([
           domFilterError.innerHTML = visibleElements.length ? '' : translate.get('error_no_results');
         }).filter);
       });
+      setTimeout(function() {
+        _.each(document.querySelectorAll('img[data-src-hd]'), function(img) { img.src = img.dataset.srcHd });
+      }, 1000);
     });
     if(!playlists.length) {
       return app.errorNoTracks();

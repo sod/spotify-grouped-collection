@@ -35,9 +35,9 @@ require([
      */
     album: function(album) {
       var playButton = buttons.PlayButton.forItem(album);
-      var imageHD = crel('img', {src: album.imageForSize(120), 'class': 'sp-image-style-rounded sp-image-style-embossed'});
+      var image = crel('img', {src: album.imageForSize(64), 'data-src-hd': album.imageForSize(128), 'class': 'sp-image-style-rounded sp-image-style-embossed'});
       return [
-        crel('div', clas.image, crel('div', clas.inset, imageHD)),
+        crel('div', clas.image, crel('div', clas.inset, image)),
         crel('div', clas.playButton, crel('a', {'class': 'center', href: album.uri}, playButton.node)),
         crel('div', clas.artist, exports.artist(album.artists)),
         crel('div', clas.album, crel('a', {href: album.uri}, album.name))
