@@ -1,3 +1,7 @@
+#artists {
+  overflow-x: hidden;
+}
+
 h2 {
   float: left;
   border: none;
@@ -19,13 +23,12 @@ h2 > a {
 }
 
 .char {
-  margin-left: 52px;
+  margin: 0 -64px 0 52px;
 }
 
 .artist {
   display: inline-block;
   position: relative;
-  margin: 0 0 12px 0;
   border-radius: 4px;
 }
 
@@ -69,7 +72,7 @@ h2 > a {
 .albums li {
   position: relative;
   display: inline-block;
-  margin: 0 15px 0 0;
+  margin: 0 15px 15px 0;
   list-style: none;
   vertical-align: top;
 }
@@ -140,6 +143,13 @@ h2 > a {
   color: #555;
 }
 
+@media (max-width: 800px) {
+  #navigation li a {
+    padding: 4px 4px;
+    font-size: 16px;
+  }
+}
+
 
 @media (max-width: 700px) {
   h2 {
@@ -147,10 +157,15 @@ h2 > a {
   }
 
   .char {
-    margin-left: 0;
+    margin: 0 -32px 0 0;
   }
 
   .albums {
     margin-right: 32px;
+  }
+
+  #navigation li a {
+    padding: 4px 3px;
+    font-size: 15px;
   }
 }
