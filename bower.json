@@ -2,7 +2,7 @@
   "name": "spotify-grouped-collection",
   "homepage": "https://github.com/sod/spotify-grouped-collection",
   "dependencies": {
-    "underscore": "~1.5.2",
+    "lodash": "~2.4",
     "crel": "*"
   }
 }
