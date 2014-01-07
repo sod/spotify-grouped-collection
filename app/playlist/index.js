@@ -21,7 +21,6 @@ require([
   libPlaylist.fromCurrentUser(function(playlists) {
     var collections = [];
     var doneFn = _.after(playlists.length, function() {
-      window.console && window.console.log('done');
       var fragment = dom.playlist(collections, playlists);
       domPlaylists.innerHTML = '';
       domPlaylists.appendChild(fragment);
